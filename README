@@ -1,0 +1,24 @@
+Arduino CLI instead of the shitty desktop app:
+
+instructions found at youtube.com/watch?v=qAM2S27FWAI
+
+!!!!!!!!!!!!MAKE SURE TX AND RX PINS ARE DISCONNECTED BEFORE UPLOADING OR IT WILL NOT UPLOAD!!!!!!!!!!!
+!!!!!!!!!!!!NOTE: THE TOP LEFT USB-C PORT ON THE XPS13 IS /dev/ttyACM1!!! MAKE SURE THE MAKE FILE IN EACH DIRECTORY IS SET TO ACM1 (open the make file within the each directory and you'll see how)
+
+if video gone:
+1: make sure all .ino files are in their own folder
+2: make sure a copy of the Makefile is in each folder with the .ino folder you want to run
+3: run "make upload clean" inside each folder to compile, upload, then get rid of clutter
+	Note: for the shitty asian nanos, they work, but you just need to try to upload them a bunch of times
+	it'll say stuff like device busy or till do the counting thing, but just keep trying itll eventually work.
+	not sure what the prob is
+
+IF YOU USE SERIAL OUTPUT:
+steps 1 and 2 same
+3: run "make upload monitor clean" to run serial monitor over command line
+
+COMMAND LINE SERIAL MONITOR COMMANDS:
+CTRL-A then CTRL-D to hide the monitor (does not kill it)
+screen -X kill : kills running screens
+screen -list : displays all current running screens
+screen -r displays the last displayed serial monitor
