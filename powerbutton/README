@@ -1,0 +1,5 @@
+# After plugging ATTiny into computer via the programmer, I run these commands to compile and upload. That's 100% all.
+
+avr-gcc -mmcu=attiny85 -Os powerbutton.c -o powerbutton.elf
+avr-objcopy -O ihex powerbutton.elf powerbutton.hex
+sudo avrdude -c usbtiny -p t85 -U flash:w:powerbutton.hex
